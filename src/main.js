@@ -23,11 +23,11 @@ let data = {
       last_name : last_Name.charAt(0).toUpperCase()+last_Name.slice(1),
       email :email,
       GPA : GPA,
-      comments:false
+
     });
     
   },
-  changeStudent(id,avatar,first_Name, last_Name,email,GPA, comments){
+  changeStudent(id,avatar,first_Name, last_Name,email,GPA){
     id = id-1;
     console.log("this is a ID : "+ id);
     this.students[id].avatar = avatar;
@@ -35,9 +35,10 @@ let data = {
     this.students[id].last_name = last_Name;
     this.students[id].email = email;
     this.students[id].GPA = GPA;
-    this.students[id].comments = comments;
+  
     this.class = [];
   },
+  
   GoTo(student){
     this.class.push(student);
   }

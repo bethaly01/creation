@@ -36,8 +36,7 @@
         </div>
 
         <div v-else class="else">
-                <p>The student has been added in the list</p>
-                
+                <p>The student has been added in the list</p>                
         </div>
     </div>
 </template>
@@ -51,7 +50,7 @@ export default {
             lastName: '',
             email: '',
             GPA: '',
-            comments: '',
+
             add: true
         }
     },
@@ -60,7 +59,7 @@ export default {
       this.add = !this.add;
     },
         addStudent(){
-            this.$root.$data.addStudent(this.avatar,this.firstName,this.lastName,this.email,this.GPA,this.comments);
+            this.$root.$data.addStudent(this.avatar,this.firstName,this.lastName,this.email,this.GPA);
             this.add=false;
         },  
     }

@@ -28,6 +28,7 @@
                     <div class="pure-controls" style="margin:0px;">
                         <button type="submit" class="pure-button pure-button-primary">Submit</button>
                     </div>
+                    
                 </fieldset>
             </form>
             <div class="image-div">
@@ -37,8 +38,6 @@
 
         <div v-else class="else">
                 <p>The student has been changed on the list</p>
-                
-                <p><a @click="toggleForm" href="/">Go Home</a></p>
         </div>
     </div>
 </template>
@@ -52,7 +51,7 @@ export default {
             lastName: this.$root.class[0].last_name,
             email: this.$root.class[0].email,
             GPA: this.$root.class[0].GPA,
-            comments: this.$root.class[0].comments,
+          
             change: true
         }
     },
@@ -61,9 +60,11 @@ export default {
             this.change = !this.change;
         },
         changeStudent(){
-            this.$root.$data.changeStudent(this.$root.class[0].id,this.avatar,this.firstName,this.lastName,this.email,this.GPA,this.comments);
+            this.$root.$data.changeStudent(this.$root.class[0].id,this.avatar,this.firstName,this.lastName,this.email,this.GPA);
             this.change=false;
+           
         },
+        
         
     }    
 }
